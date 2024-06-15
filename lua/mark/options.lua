@@ -1,4 +1,4 @@
-    vim.opt.number = true
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 2
@@ -23,3 +23,20 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
+
+--- format on save
+local function format_on_save()
+  local clients = vim.lsp.get_clients()
+  for _, client in pairs(clients) do
+    if client.name == 'excluded_lsp_server_name' then
+      return
+    end
+  end
+  vim.lsp.buf.format()
+end
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    format_on_save()
+  end,
+})
