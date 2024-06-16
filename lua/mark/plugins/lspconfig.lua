@@ -16,7 +16,7 @@ return {
     local cmp_nvim_lsp = require 'cmp_nvim_lsp'
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
-    mason_lspconfig.setup_handlers({
+    mason_lspconfig.setup_handlers {
       -- default handler for installed servers
       function(server_name)
         lspconfig[server_name].setup {
@@ -43,23 +43,23 @@ return {
                   {
                     name = '@vue/typescript-plugin',
                     location = require('mason-registry').get_package('vue-language-server'):get_install_path()
-                        .. '/node_modules/@vue/language-server',
+                      .. '/node_modules/@vue/language-server',
                     languages = { 'vue' },
                     configNamespace = 'typescript',
                     enableForWorkspaceTypeScriptVersions = true,
                   },
                 },
               },
-            }
-          }
+            },
+          },
         }
       end,
       ['omnisharp'] = function()
         lspconfig.omnisharp.setup {
           capabilities = capabilities,
-          cmd = { "dotnet", "/home/mark/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+          cmd = { 'dotnet', '/home/mark/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll' },
         }
-      end
-    })
+      end,
+    }
   end,
 }

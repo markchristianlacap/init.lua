@@ -34,8 +34,8 @@ return {
         'c',
         'vue',
         'fish',
-        'c_sharp'
-      }
+        'c_sharp',
+      },
     }
   end,
 }

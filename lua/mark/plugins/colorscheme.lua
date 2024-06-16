@@ -3,7 +3,7 @@ return {
   name = 'catppuccin',
   priority = 1000,
   config = function()
-    require('catppuccin').setup({
+    require('catppuccin').setup {
       integrations = {
         cmp = true,
         gitsigns = true,
@@ -18,7 +18,7 @@ return {
         treesitter = true,
       },
       -- transparent_background = true, -- disables setting the background color.
-    })
-    vim.cmd([[colorscheme catppuccin]])
-  end
+    }
+    vim.cmd [[colorscheme catppuccin]]
+  end,
 }

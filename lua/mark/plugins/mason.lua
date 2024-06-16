@@ -25,7 +25,7 @@ return {
         'lua_ls',
         'vtsls',
         'omnisharp',
-        'unocss'
+        'unocss',
       },
     }
   end,
