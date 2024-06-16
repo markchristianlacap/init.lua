@@ -78,6 +78,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
     opts.desc = 'Restart LSP'
-    vim.keymap.set('n', '<leader>lrs', ':LspRestart<CR>', opts) -- mapping to restart lsp if necessary
+    vim.keymap.set('n', '<leader>lR', ':LspRestart<CR>', opts) -- mapping to restart lsp if necessary
   end,
 })

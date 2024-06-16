@@ -24,20 +24,9 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
 
---- format on save
-local function format_on_save()
-  local clients = vim.lsp.get_clients()
-  for _, client in pairs(clients) do
-    if client.name == 'volar' then
-      vim.cmd('EslintFixAll')
-      return
-    end
-  end
-
-  -- fallback format
-  vim.lsp.buf.format()
-end
+local utils = require 'mark.utils'
+-- callback function on save
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
-  callback = function() format_on_save() end,
+  callback = function() utils.format() end,
 })
