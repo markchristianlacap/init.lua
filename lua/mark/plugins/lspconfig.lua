@@ -55,9 +55,11 @@ return {
         }
       end,
       ['omnisharp'] = function()
+        local omnisharp_path = require('mason-registry').get_package('omnisharp'):get_install_path()
+          .. '/libexec/OmniSharp.dll'
         lspconfig.omnisharp.setup {
           capabilities = capabilities,
-          cmd = { 'dotnet', '/home/mark/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll' },
+          cmd = { 'dotnet', omnisharp_path },
         }
       end,
     }
