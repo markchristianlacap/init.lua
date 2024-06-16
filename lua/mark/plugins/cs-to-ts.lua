@@ -16,7 +16,7 @@ return {
           vim.fn.setreg('+', interface)
         end
       end,
-      desc = 'cs-to-ts'
+      desc = 'cs-to-ts',
     },
-  }
+  },
 }

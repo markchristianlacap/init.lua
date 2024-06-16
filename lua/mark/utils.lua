@@ -5,14 +5,14 @@ local M = {
     if not eslint_installed then goto next end
     for _, client in pairs(clients) do
       if client.name == 'volar' then
-        vim.cmd('EslintFixAll')
+        vim.cmd 'EslintFixAll'
         return
       end
     end
     ::next::
     -- fallback format
     vim.lsp.buf.format()
-  end
+  end,
 }
 
 return M

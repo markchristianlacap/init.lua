@@ -15,8 +15,8 @@ return {
     {
       '<C-y>',
       function() require('yazi').yazi() end,
-      desc = "Open the file manager in the current working directory",
-    }
+      desc = 'Open the file manager in the current working directory',
+    },
   },
   ---@type YaziConfig
   opts = {
