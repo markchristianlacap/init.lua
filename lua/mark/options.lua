@@ -28,8 +28,13 @@ vim.opt.signcolumn = 'yes'
 local function format_on_save()
   local clients = vim.lsp.get_clients()
   for _, client in pairs(clients) do
-    if client.name == 'excluded_lsp_server_name' then return end
+    if client.name == 'volar' then
+      vim.cmd('EslintFixAll')
+      return
+    end
   end
+
+  -- fallback format
   vim.lsp.buf.format()
 end
 vim.api.nvim_create_autocmd('BufWritePre', {
