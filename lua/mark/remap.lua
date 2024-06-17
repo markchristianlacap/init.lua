@@ -5,8 +5,6 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join lines' })
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down' })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up' })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Center search results' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Center search results' })
 
@@ -33,6 +31,12 @@ vim.keymap.set(
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = 'Replace word under cursor' }
 )
+
+-- remap system default
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent' })
+vim.keymap.set('v', '<', '<gv', { desc = 'Unindent' })
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {

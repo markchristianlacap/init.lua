@@ -1,13 +1,14 @@
+local flavour = 'mocha'
 return {
   'catppuccin/nvim',
   name = 'catppuccin',
   priority = 1000,
   config = function()
     require('catppuccin').setup {
-      flavour = 'mocha', -- latte, frappe, macchiato, mocha
+      flavour = flavour, -- latte, frappe, macchiato, mocha
       background = { -- :h background
         light = 'latte',
-        dark = 'mocha',
+        dark = flavour,
       },
       transparent_background = false, -- disables setting the background color.
       show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
@@ -57,6 +58,20 @@ return {
         lsp_trouble = true,
       },
     }
+    local palette = require('catppuccin.palettes').get_palette(flavour)
+    -- set hightlight group for yanked text
+    vim.api.nvim_set_hl(0, 'YankHighlight', {
+      bg = palette.peach,
+      fg = palette.mauve,
+      blend = 100,
+    })
+
+    -- Automatically highlight yanked text using augroup lua and autocmd
+    vim.api.nvim_create_autocmd('TextYankPost', {
+      group = vim.api.nvim_create_augroup('YankHighlighting', {}),
+      pattern = '*',
+      callback = function() vim.highlight.on_yank { higroup = 'YankHighlight', timeout = 200 } end,
+    })
     vim.cmd [[colorscheme catppuccin]]
   end,
 }

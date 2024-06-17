@@ -14,5 +14,4 @@ local M = {
     vim.lsp.buf.format()
   end,
 }
-
 return M

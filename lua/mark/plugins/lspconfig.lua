@@ -63,5 +63,10 @@ return {
         }
       end,
     }
+
+    -- manual lsp config
+    require('lspconfig').unocss.setup {
+      capabilities = capabilities,
+    }
   end,
 }
