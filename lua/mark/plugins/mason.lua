@@ -34,6 +34,7 @@ return {
         'lua_ls',
         'vtsls',
         'omnisharp',
+        'jsonls',
       },
     }
   end,

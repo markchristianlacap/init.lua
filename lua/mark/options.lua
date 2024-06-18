@@ -23,6 +23,7 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
+vim.g.netrw_banner = 0
 
 local utils = require 'mark.utils'
 
