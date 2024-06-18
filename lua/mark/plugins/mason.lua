@@ -2,6 +2,7 @@ return {
   'williamboman/mason.nvim',
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
   },
   config = function()
     -- import mason
@@ -9,12 +10,20 @@ return {
 
     -- import mason-lspconfig
     local mason_lspconfig = require 'mason-lspconfig'
+    local mason_tool_installer = require 'mason-tool-installer'
 
+    -- import mason-tool-installer
+    mason_tool_installer.setup {
+      ensure_installed = {
+        'cspell',
+        'stylua',
+      },
+    }
     -- enable mason and configure icons
     mason.setup {}
 
     mason_lspconfig.setup {
-      -- list of servers for mason to install
+      -- list of servers for mason to install and auto setup
       ensure_installed = {
         'html',
         'cssls',
