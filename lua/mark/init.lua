@@ -1,3 +1,3 @@
 require 'mark.options'
-require 'mark.remap'
+require 'mark.keymaps'
 require 'mark.lazy'

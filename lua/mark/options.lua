@@ -25,6 +25,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
 
 local utils = require 'mark.utils'
+
 -- callback function on save
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
