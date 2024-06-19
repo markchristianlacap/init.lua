@@ -15,7 +15,7 @@ return {
     )
 
     -- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set('n', '<C-P>', function() harpoon:list():prev() end, { desc = 'Go to previous location' })
-    vim.keymap.set('n', '<C-N>', function() harpoon:list():next() end, { desc = 'Go to next location' })
+    vim.keymap.set('n', '<C-p>', function() harpoon:list():prev() end, { desc = 'Go to previous location' })
+    vim.keymap.set('n', '<C-n>', function() harpoon:list():next() end, { desc = 'Go to next location' })
   end,
 }

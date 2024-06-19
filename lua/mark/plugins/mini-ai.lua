@@ -1,1 +1,4 @@
-return { 'echasnovski/mini.ai', opts = {} }
+return {
+  'echasnovski/mini.ai',
+  opts = {},
+}

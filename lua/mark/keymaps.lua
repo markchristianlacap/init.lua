@@ -1,5 +1,4 @@
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>e', vim.cmd.Explore, { desc = 'Open Explorer' })
 
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
 vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
