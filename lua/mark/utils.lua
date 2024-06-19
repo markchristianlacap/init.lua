@@ -5,7 +5,7 @@ local M = {
     if not eslint_installed then goto next end
     for _, client in pairs(clients) do
       if client.name == 'volar' or client.name == 'vtsls' then
-        vim.cmd 'EslintFixAll'
+        vim.lsp.buf.format { name = 'eslint' }
         return
       end
     end

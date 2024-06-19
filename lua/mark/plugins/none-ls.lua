@@ -1,7 +1,7 @@
 return {
   'nvimtools/none-ls.nvim',
   dependencies = {
-    'davidmh/cspell.nvim'
+    'davidmh/cspell.nvim',
   },
   config = function()
     local null_ls = require 'null-ls'
@@ -10,15 +10,13 @@ return {
     null_ls.setup {
       sources = {
         -- cspell
-        cspell.diagnostics.with({
-          diagnostics_postprocess = function(diagnostic)
-            diagnostic.severity = vim.diagnostic.severity["HINT"]
-          end,
-        }),
+        cspell.diagnostics.with {
+          diagnostics_postprocess = function(diagnostic) diagnostic.severity = vim.diagnostic.severity['HINT'] end,
+        },
         cspell.code_actions,
         --stylua
         null_ls.builtins.formatting.stylua,
       },
     }
-  end
+  end,
 }
