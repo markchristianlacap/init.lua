@@ -40,7 +40,12 @@ return {
     vim.keymap.set(
       'n',
       '<leader>ff',
-      function() builtin.find_files { hidden = true, no_ignore = true } end,
+      function()
+        builtin.find_files {
+          hidden = true,
+          no_ignore = false,
+        }
+      end,
       { desc = 'Find files (with hidden and no ignore)' }
     )
 

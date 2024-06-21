@@ -1,33 +1,44 @@
 vim.g.mapleader = ' '
+local opts = { noremap = true, silent = true, desc = '' }
+opts.desc = 'Move selection down'
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", opts)
+opts.desc = 'Move selection up'
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", opts)
 
-vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
-vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
-
-vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join lines' })
-vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Center search results' })
-vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Center search results' })
+opts.desc = 'Join lines'
+vim.keymap.set('n', 'J', 'mzJ`z', opts)
+opts.desc = 'Center search results'
+vim.keymap.set('n', 'n', 'nzzzv', opts)
+opts.desc = 'Center search results'
+vim.keymap.set('n', 'N', 'Nzzzv', opts)
 
 -- greatest remap ever
-vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste without losing original content' })
+opts.desc = 'Paste without losing original content'
+vim.keymap.set('x', '<leader>p', [["_dP]], opts)
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Copy to clipboard' })
-vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Copy to clipboard' })
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without losing original content' })
-vim.keymap.set('n', '<leader>lf', function() require('mark.utils').format() end, { desc = 'LSP Format code' })
-
-vim.keymap.set(
-  'n',
-  '<leader>r',
-  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = 'Replace word under cursor' }
-)
+opts.desc = 'Copy to clipboard'
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], opts)
+opts.desc = 'Copy to clipboard'
+vim.keymap.set('n', '<leader>Y', [["+Y]], opts)
+opts.desc = 'Delete without losing original content'
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], opts)
+opts.desc = 'LSP Format code'
+vim.keymap.set('n', '<leader>lf', function() require('mark.utils').format() end, opts)
+opts.desc = 'Replace word under cursor'
+vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- remap system default
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down' })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up' })
-vim.keymap.set('v', '>', '>gv', { desc = 'Indent' })
-vim.keymap.set('v', '<', '<gv', { desc = 'Unindent' })
+opts.desc = 'Scroll down'
+vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
+opts.desc = 'Scroll up'
+vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
+opts.desc = 'Indent'
+vim.keymap.set('v', '>', '>gv', opts)
+opts.desc = 'Unindent'
+vim.keymap.set('v', '<', '<gv', opts)
+opts.desc = 'Close buffer'
+vim.keymap.set('n', '<leader>q', ':bd<CR>', opts)
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {

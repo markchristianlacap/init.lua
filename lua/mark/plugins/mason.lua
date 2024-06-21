@@ -33,7 +33,7 @@ return {
         'intelephense',
         'lua_ls',
         'vtsls',
-        'omnisharp',
+        -- 'omnisharp',
         'jsonls',
       },
     }
