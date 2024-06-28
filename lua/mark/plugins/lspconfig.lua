@@ -12,7 +12,9 @@ return {
     local mason_lspconfig = require 'mason-lspconfig'
     local cmp_nvim_lsp = require 'cmp_nvim_lsp'
     local highlight_color = require 'nvim-highlight-colors'
-    highlight_color.setup {}
+    highlight_color.setup {
+      render = 'foreground',
+    }
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
     mason_lspconfig.setup_handlers { -- default handler for installed servers
@@ -21,19 +23,10 @@ return {
           capabilities = capabilities,
         }
       end,
-      ['volar'] = function()
-        lspconfig.volar.setup {
-          capabilities = capabilities,
-          init_options = {
-            vue = {
-              hybridMode = false,
-            },
-          },
-        }
-      end,
       ['vtsls'] = function()
         lspconfig.vtsls.setup {
           capabilities = capabilities,
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
           settings = {
             vtsls = {
               tsserver = {
@@ -41,7 +34,7 @@ return {
                   {
                     name = '@vue/typescript-plugin',
                     location = require('mason-registry').get_package('vue-language-server'):get_install_path()
-                      .. '/node_modules/@vue/language-server',
+                        .. '/node_modules/@vue/language-server',
                     languages = { 'vue' },
                     configNamespace = 'typescript',
                     enableForWorkspaceTypeScriptVersions = true,
