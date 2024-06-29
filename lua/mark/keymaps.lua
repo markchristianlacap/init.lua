@@ -2,8 +2,11 @@ vim.g.mapleader = ' '
 local opts = { noremap = true, silent = true, desc = '' }
 opts.desc = 'Move selection down'
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', opts)
+
 opts.desc = 'Move selection up'
 vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", opts)
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', opts)
 
 opts.desc = 'Join lines'
 vim.keymap.set('n', 'J', 'mzJ`z', opts)
@@ -48,22 +51,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- set keybinds
     opts.desc = 'Show LSP references'
-    vim.keymap.set('n', 'gR', vim.lsp.buf.references, opts) -- show definition, references
+    vim.keymap.set('n', 'gR', ':FzfLua lsp_references<CR>', opts) -- show definition, references
 
     opts.desc = 'Go to declaration'
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts) -- go to declaration
+    vim.keymap.set('n', 'gD', ':FzfLua lsp_declarations<CR>', opts) -- go to declaration
 
     opts.desc = 'Show LSP definitions'
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts) -- show lsp definitions
+    vim.keymap.set('n', 'gd', ':FzfLua lsp_definitions<CR>', opts) -- show lsp definitions
 
     opts.desc = 'Show LSP implementations'
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts) -- show lsp implementations
+    vim.keymap.set('n', 'gi', ':FzfLua lsp_implementations<CR>', opts) -- show lsp implementations
 
     opts.desc = 'Show LSP type definitions'
-    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts) -- show lsp type definitions
+    vim.keymap.set('n', 'gt', ':FzfLua lsp_typedefs<CR>', opts) -- show lsp type definitions
 
     opts.desc = 'See available code actions'
-    vim.keymap.set({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+    vim.keymap.set({ 'n', 'v' }, '<leader>la', ':FzfLua lsp_code_actions<CR>', opts) -- see available code actions, in visual mode will apply to selection
 
     opts.desc = 'Smart rename'
     vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, opts) -- smart rename
