@@ -32,7 +32,7 @@ return {
         'volar',
         'intelephense',
         'lua_ls',
-        'tsserver',
+        'vtsls',
         'jsonls',
         'dockerls',
         'yamlls',
