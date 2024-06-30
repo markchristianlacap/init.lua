@@ -34,6 +34,9 @@ return {
         'lua_ls',
         'tsserver',
         'jsonls',
+        'dockerls',
+        'yamlls',
+        'bashls',
       },
     }
   end,
