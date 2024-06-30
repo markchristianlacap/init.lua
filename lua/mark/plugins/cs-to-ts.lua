@@ -1,6 +1,7 @@
 return {
   dir = '~/dev/plugins/cs-to-ts.nvim',
   ft = 'cs',
+  event = 'InsertEnter',
   keys = {
     {
       '<leader>lc',
