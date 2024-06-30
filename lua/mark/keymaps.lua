@@ -40,8 +40,14 @@ opts.desc = 'Indent'
 vim.keymap.set('v', '>', '>gv', opts)
 opts.desc = 'Unindent'
 vim.keymap.set('v', '<', '<gv', opts)
+
+--buffer remaps
 opts.desc = 'Close buffer'
-vim.keymap.set('n', '<leader>q', ':bd<CR>', opts)
+vim.keymap.set('n', '<leader>c', ':bd<CR>', opts)
+opts.desc = 'Close all buffers'
+vim.keymap.set('n', '<leader>bC', ':bufdo bd<CR>', opts)
+opts.desc = 'Close other buffers except current'
+vim.keymap.set('n', '<leader>bc', ':%bd|e#<CR>', opts)
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {

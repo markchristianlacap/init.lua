@@ -5,16 +5,11 @@ return {
     'hrsh7th/cmp-nvim-lsp',
     { 'antosha417/nvim-lsp-file-operations', config = true },
     'seblj/roslyn.nvim',
-    'brenoprata10/nvim-highlight-colors',
   },
   config = function()
     local lspconfig = require 'lspconfig'
     local mason_lspconfig = require 'mason-lspconfig'
     local cmp_nvim_lsp = require 'cmp_nvim_lsp'
-    local highlight_color = require 'nvim-highlight-colors'
-    highlight_color.setup {
-      render = 'foreground',
-    }
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
     mason_lspconfig.setup_handlers { -- default handler for installed servers
@@ -63,7 +58,13 @@ return {
       --   }
       -- end,
     }
-    require('roslyn').setup { capabilities = capabilities }
+    require('roslyn').setup {
+      capabilities = capabilities,
+      exe = vim.fs.joinpath(
+        vim.fn.expand '~',
+        '.vscode/extensions/ms-dotnettools.csharp-2.34.12-linux-x64/.roslyn/Microsoft.CodeAnalysis.LanguageServer.dll'
+      ),
+    }
     -- manual lsp config
     require('lspconfig').unocss.setup {
       capabilities = capabilities,
