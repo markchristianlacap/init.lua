@@ -21,7 +21,6 @@ return {
       ['vtsls'] = function()
         lspconfig.vtsls.setup {
           capabilities = capabilities,
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
           settings = {
             vtsls = {
               tsserver = {
@@ -36,6 +35,15 @@ return {
                   },
                 },
               },
+            },
+          },
+        }
+      end,
+      ['volar'] = function()
+        lspconfig.volar.setup {
+          init_options = {
+            vue = {
+              hybridMode = false,
             },
           },
         }
