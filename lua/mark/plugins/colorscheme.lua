@@ -1,9 +1,13 @@
 return {
-  'rebelot/kanagawa.nvim',
+  'catppuccin/nvim',
+  name = 'catppuccin',
   priority = 1000,
-  opts = {},
   config = function()
-    vim.cmd.colorscheme 'kanagawa'
+    require('catppuccin').setup {
+      flavour = 'mocha',
+      transparent_background = true,
+    }
+    vim.cmd.colorscheme 'catppuccin'
     -- set yank highlight
     vim.api.nvim_set_hl(0, 'YankHighlight', { link = 'IncSearch' })
 
