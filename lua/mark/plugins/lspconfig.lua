@@ -53,7 +53,7 @@ return {
       capabilities = capabilities,
       exe = vim.fs.joinpath(
         vim.fn.expand '~',
-        '.vscode/extensions/ms-dotnettools.csharp-2.34.12-linux-x64/.roslyn/Microsoft.CodeAnalysis.LanguageServer.dll'
+        '.vscode/extensions/ms-dotnettools.csharp-2.39.29-linux-x64/.roslyn/Microsoft.CodeAnalysis.LanguageServer.dll'
       ),
     }
     -- manual lsp config
