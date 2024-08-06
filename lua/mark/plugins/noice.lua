@@ -1,3 +1,4 @@
+if vim.g.vscode then return {} end
 return {
   'folke/noice.nvim',
   event = 'VeryLazy',
