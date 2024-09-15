@@ -11,11 +11,13 @@ return {
     local null_ls = require "null-ls"
     null_ls.setup {
       sources = {
-        cspell.diagnostics,
+        cspell.diagnostics.with {
+          diagnostics_postprocess = function(diagnostic) diagnostic.severity = vim.diagnostic.severity.HINT end,
+        },
         cspell.code_actions,
         require "none-ls.diagnostics.eslint_d",
         require "none-ls.formatting.eslint_d",
-        null_ls.builtins.formatting.csharpier
+        null_ls.builtins.formatting.csharpier,
       },
     }
   end,

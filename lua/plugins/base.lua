@@ -5,16 +5,16 @@ return {
     name = "catppuccin",
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
+      require("catppuccin").setup {
         flavour = "mocha",
         transparent_background = true,
         integrations = {
           fidget = true,
           mason = true,
         },
-      })
+      }
       vim.cmd.colorscheme "catppuccin"
-    end
+    end,
   },
   {
     "stevearc/oil.nvim",
@@ -24,7 +24,7 @@ return {
       skip_confirm_for_simple_edits = true,
       view_options = {
         show_hidden = true,
-      }
+      },
     },
     lazy = false,
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
@@ -45,7 +45,7 @@ return {
     opts = {
       notification = {
         window = { winblend = 0 },
-      }
+      },
     },
-  }
+  },
 }
