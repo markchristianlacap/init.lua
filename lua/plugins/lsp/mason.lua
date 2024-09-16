@@ -38,6 +38,7 @@ return {
         "rust_analyzer",
         "yamlls",
         "dockerls",
+        "intelephense",
       },
     }
   end,
