@@ -1,6 +1,5 @@
 if vim.g.vscode then return {} end
-return
-{
+return {
   "numToStr/Comment.nvim",
   dependencies = {
     "JoosepAlviste/nvim-ts-context-commentstring",
