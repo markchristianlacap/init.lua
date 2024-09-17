@@ -9,7 +9,6 @@ return {
         flavour = "mocha",
         transparent_background = true,
         integrations = {
-          fidget = true,
           mason = true,
         },
       }
@@ -41,11 +40,22 @@ return {
     config = function() require("better_escape").setup() end,
   },
   {
-    "j-hui/fidget.nvim",
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
-      notification = {
-        window = { winblend = 0 },
+      options = {
+        theme = "catppuccin",
       },
+    },
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
     },
   },
 }
