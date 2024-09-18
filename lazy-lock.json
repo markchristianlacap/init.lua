@@ -38,8 +38,8 @@
   "nvim-ts-autotag": { "branch": "main", "commit": "e239a560f338be31337e7abc3ee42515daf23f5e" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "375c2d86cee6674afd75b4f727ce3a80065552f7" },
   "nvim-web-devicons": { "branch": "master", "commit": "9154484705968658e9aab2b894d1b2a64bf9f83d" },
-  "oil.nvim": { "branch": "master", "commit": "f60bb7f793477d99ef1acf39e920bf2ca4e644de" },
-  "plenary.nvim": { "branch": "master", "commit": "f4faa5a3dc77a694ba58f42585985fed88540ac6" },
+  "oil.nvim": { "branch": "master", "commit": "1360be5fda9c67338331abfcd80de2afbb395bcd" },
+  "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "roslyn.nvim": { "branch": "main", "commit": "d36bc977177c919c191f9f0190d71417ba0b055c" },
   "smart-splits.nvim": { "branch": "master", "commit": "cac7e33e08c86d94950d5ba6c6a4df850acafb33" },
   "vim-fugitive": { "branch": "master", "commit": "d4877e54cef67f5af4f950935b1ade19ed6b7370" }

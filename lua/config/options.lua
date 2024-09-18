@@ -22,6 +22,7 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
+vim.opt.colorcolumn = "80"
 
 vim.diagnostic.config {
   signs = {
