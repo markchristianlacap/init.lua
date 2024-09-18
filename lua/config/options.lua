@@ -20,6 +20,8 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
 
 vim.diagnostic.config {
   signs = {
