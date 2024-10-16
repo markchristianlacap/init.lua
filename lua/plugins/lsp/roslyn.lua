@@ -7,7 +7,7 @@ return {
         "dotnet",
         vim.fs.joinpath(
           vim.fn.expand "~",
-          ".vscode/extensions/ms-dotnettools.csharp-2.45.25-linux-x64/.roslyn/Microsoft.CodeAnalysis.LanguageServer.dll"
+          ".vscode/extensions/ms-dotnettools.csharp-2.50.25-linux-x64/.roslyn/Microsoft.CodeAnalysis.LanguageServer.dll"
         ),
       },
     }
