@@ -1,20 +1,30 @@
 if vim.g.vscode then return {} end
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "rebelot/kanagawa.nvim",
+    lazy = false,
     priority = 1000,
     config = function()
-      require("catppuccin").setup {
-        flavour = "mocha",
-        transparent_background = true,
-        integrations = {
-          mason = true,
-        },
+      require("kanagawa").setup {
+        transparent = true,
       }
-      vim.cmd.colorscheme "catppuccin"
+      vim.cmd.colorscheme "kanagawa"
     end,
   },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   config = function()
+  --     require("catppuccin").setup {
+  --       flavour = "mocha",
+  --       integrations = {
+  --         mason = true,
+  --       },
+  --     }
+  --     vim.cmd.colorscheme "catppuccin"
+  --   end,
+  -- },
   {
     "stevearc/oil.nvim",
     ---@module 'oil'
