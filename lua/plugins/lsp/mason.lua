@@ -18,7 +18,6 @@ return {
         "stylua",
         "csharpier",
         "cspell",
-        "eslint_d",
       },
     }
     -- enable mason and configure icons
@@ -27,6 +26,7 @@ return {
     mason_lspconfig.setup {
       -- list of servers for mason to install and auto setup
       ensure_installed = {
+        "eslint",
         "emmet_language_server",
         "volar",
         "unocss",

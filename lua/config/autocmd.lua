@@ -1,7 +1,7 @@
 local format_by_ft = {
-  vue = { "null-ls" },
-  javascript = { "null-ls" },
-  typescript = { "null-ls" },
+  vue = { "eslint" },
+  javascript = { "eslint" },
+  typescript = { "eslint" },
   cs = { "roslyn", "null-ls" },
 }
 
