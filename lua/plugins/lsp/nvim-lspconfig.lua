@@ -17,6 +17,21 @@ return {
           capabilities = capabilities,
         }
       end,
+      ["volar"] = function()
+        lspconfig.volar.setup {
+          capabilities = capabilities,
+          settings = {
+            vue = {
+              complete = {
+                casing = {
+                  props = "kebab",
+                  tags = "kebab",
+                }
+              }
+            }
+          }
+        }
+      end,
       ["vtsls"] = function()
         lspconfig.vtsls.setup {
           capabilities = capabilities,
@@ -28,7 +43,7 @@ return {
                   {
                     name = "@vue/typescript-plugin",
                     location = require("mason-registry").get_package("vue-language-server"):get_install_path()
-                      .. "/node_modules/@vue/language-server",
+                        .. "/node_modules/@vue/language-server",
                     languages = { "vue" },
                     configNamespace = "typescript",
                     enableForWorkspaceTypeScriptVersions = true,
