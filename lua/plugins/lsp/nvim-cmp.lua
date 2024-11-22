@@ -4,6 +4,7 @@ return {
   event = "InsertEnter",
 
   dependencies = {
+    "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path",   -- source for file system paths
     {
@@ -53,7 +54,26 @@ return {
         }),
       },
     }
+    cmp.setup.cmdline("/", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = "buffer" },
+      },
+    })
 
+    cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        name = "path",
+      }, {
+        {
+          name = "cmdline",
+          options = {
+            ignore_cmds = { "Man", "!" },
+          },
+        },
+      }),
+    })
     --lua snip keymaps
     local ls = require "luasnip"
     vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
