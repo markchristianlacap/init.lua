@@ -5,7 +5,6 @@ return {
     'saghen/blink.cmp',
     dependencies = {
       'rafamadriz/friendly-snippets',
-      'mikavilpas/blink-ripgrep.nvim',
       'markchristianlacap/csharp-namespace.nvim',
     },
     version = '*',
@@ -29,7 +28,6 @@ return {
           'path',
           'snippets',
           'buffer',
-          'ripgrep',
           'csharp_namespace'
         },
         providers = {
@@ -37,30 +35,6 @@ return {
             module = "blink-csharp-namespace",
             name = "C# Namespace",
             opts = {}
-          },
-          ripgrep = {
-            module = "blink-ripgrep",
-            name = "Ripgrep",
-            ---@module "blink-ripgrep"
-            ---@type blink-ripgrep.Options
-            opts = {
-              prefix_min_len = 3,
-              context_size = 5,
-              max_filesize = "1M",
-              project_root_marker = ".git",
-              search_casing = "--ignore-case",
-              additional_rg_options = {},
-              fallback_to_regex_highlighting = true,
-              debug = false,
-            },
-            transform_items = function(_, items)
-              for _, item in ipairs(items) do
-                item.labelDetails = {
-                  description = "(rg)",
-                }
-              end
-              return items
-            end,
           },
         },
       },
