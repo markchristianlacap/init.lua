@@ -1,14 +1,16 @@
 if vim.g.vscode then return {} end
 return {
   "neovim/nvim-lspconfig",
+    dependencies = { 'saghen/blink.cmp' },
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local lspconfig = require "lspconfig"
     local mason_lspconfig = require "mason-lspconfig"
-
+ local capabilities = require('blink.cmp').get_lsp_capabilities()
     mason_lspconfig.setup_handlers { -- default handler for installed servers
       ["volar"] = function()
         lspconfig.volar.setup {
+          capabilities = capabilities,
           settings = {
             vue = {
               complete = {
@@ -30,6 +32,7 @@ return {
       end,
       ["vtsls"] = function()
         lspconfig.vtsls.setup {
+          capabilities = capabilities,
           filetypes = { "typescript", "javascript", "vue" },
           settings = {
             vtsls = {
