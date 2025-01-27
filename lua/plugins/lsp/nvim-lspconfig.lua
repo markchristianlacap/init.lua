@@ -7,9 +7,6 @@ return {
     local mason_lspconfig = require "mason-lspconfig"
 
     mason_lspconfig.setup_handlers { -- default handler for installed servers
-      function(server_name)
-        lspconfig[server_name].setup {}
-      end,
       ["volar"] = function()
         lspconfig.volar.setup {
           settings = {
