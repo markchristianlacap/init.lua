@@ -58,5 +58,8 @@ return {
         }
       end,
     }
+    lspconfig.unocss.setup {
+      capabilities = capabilities,
+    }
   end,
 }

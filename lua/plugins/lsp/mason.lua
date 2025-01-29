@@ -29,7 +29,6 @@ return {
         "eslint",
         "emmet_language_server",
         "volar",
-        "unocss",
         "lua_ls",
         "cssls",
         "html",
