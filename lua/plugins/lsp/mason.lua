@@ -18,10 +18,16 @@ return {
         "stylua",
         "csharpier",
         "cspell",
+        "roslyn"
       },
     }
     -- enable mason and configure icons
-    mason.setup {}
+    mason.setup {
+      registries = {
+        'github:mason-org/mason-registry',
+        'github:crashdummyy/mason-registry',
+      },
+    }
 
     mason_lspconfig.setup {
       -- list of servers for mason to install and auto setup
