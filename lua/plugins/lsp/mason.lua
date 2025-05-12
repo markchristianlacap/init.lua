@@ -18,18 +18,20 @@ return {
         "stylua",
         "csharpier",
         "cspell",
-        "roslyn"
+        "roslyn",
+        "ts_ls"
       },
     }
     -- enable mason and configure icons
     mason.setup {
       registries = {
-        'github:mason-org/mason-registry',
-        'github:crashdummyy/mason-registry',
+        "github:mason-org/mason-registry",
+        "github:crashdummyy/mason-registry",
       },
     }
 
     mason_lspconfig.setup {
+      automatic_enable = true,
       -- list of servers for mason to install and auto setup
       ensure_installed = {
         "eslint",
@@ -38,7 +40,6 @@ return {
         "lua_ls",
         "cssls",
         "html",
-        "vtsls",
         "jsonls",
         "rust_analyzer",
         "yamlls",
