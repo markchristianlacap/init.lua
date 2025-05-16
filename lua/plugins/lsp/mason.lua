@@ -18,14 +18,12 @@ return {
         "stylua",
         "csharpier",
         "cspell",
-        "roslyn",
-        "ts_ls"
+        "csharp-language-server",
       },
     }
     -- enable mason and configure icons
     mason.setup {
-      registries = {
-        "github:mason-org/mason-registry",
+      registries = { "github:mason-org/mason-registry",
         "github:crashdummyy/mason-registry",
       },
     }
@@ -45,6 +43,8 @@ return {
         "yamlls",
         "dockerls",
         "intelephense",
+        "ts_ls",
+        "csharp_ls",
       },
     }
   end,
