@@ -34,7 +34,7 @@ return {
       ensure_installed = {
         "eslint",
         "emmet_language_server",
-        "volar",
+        "vue_ls",
         "lua_ls",
         "cssls",
         "html",
