@@ -18,7 +18,8 @@ return {
         "stylua",
         "csharpier",
         "cspell",
-        "csharp-language-server",
+        -- "csharp-language-server",
+        "roslyn"
       },
     }
     -- enable mason and configure icons
@@ -44,7 +45,7 @@ return {
         "dockerls",
         "intelephense",
         "ts_ls",
-        "csharp_ls",
+        -- "csharp_ls",
       },
     }
   end,
