@@ -18,7 +18,6 @@ return {
         "stylua",
         "csharpier",
         "cspell",
-        -- "csharp-language-server",
         "roslyn"
       },
     }
