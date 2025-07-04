@@ -44,8 +44,8 @@ return {
         "yamlls",
         "dockerls",
         "intelephense",
-        "ts_ls",
-        -- "csharp_ls",
+        "vtsls",
+        "csharp_ls",
       },
     }
   end,
