@@ -3,8 +3,8 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    local vue_language_server_path = vim.fn.stdpath('data') ..
-        "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+    local vue_language_server_path = vim.fn.expand '$MASON/packages' ..
+    '/vue-language-server' .. '/node_modules/@vue/language-server'
     local vue_plugin = {
       name = '@vue/typescript-plugin',
       location = vue_language_server_path,
@@ -63,18 +63,5 @@ return {
     vim.lsp.config('vtsls', vtsls_config)
     vim.lsp.config('vue_ls', vue_ls_config)
     vim.lsp.enable({ 'vtsls', 'vue_ls' })
-    -- local lspconfig = require('lspconfig')
-    -- lspconfig.volar.setup {
-    --   settings = {
-    --     vue = {
-    --       complete = {
-    --         casing = {
-    --           props = "kebab",
-    --           tags = "kebab",
-    --         }
-    --       }
-    --     }
-    --   },
-    -- }
   end
 }
