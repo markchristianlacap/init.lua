@@ -23,7 +23,8 @@ return {
     }
     -- enable mason and configure icons
     mason.setup {
-      registries = { "github:mason-org/mason-registry",
+      registries = {
+        "github:mason-org/mason-registry",
         "github:crashdummyy/mason-registry",
       },
     }
@@ -44,7 +45,6 @@ return {
         "dockerls",
         "intelephense",
         "vtsls",
-        "csharp_ls",
       },
     }
   end,
