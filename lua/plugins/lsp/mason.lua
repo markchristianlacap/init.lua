@@ -30,7 +30,12 @@ return {
     }
 
     mason_lspconfig.setup {
-      automatic_enable = true,
+      automatic_enable = {
+        exclude = {
+          "vue_ls",
+          "vtsls"
+        }
+      },
       -- list of servers for mason to install and auto setup
       ensure_installed = {
         "eslint",
