@@ -53,10 +53,6 @@ return {
     },
   },
   {
-    "max397574/better-escape.nvim",
-    config = function() require("better_escape").setup() end,
-  },
-  {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
