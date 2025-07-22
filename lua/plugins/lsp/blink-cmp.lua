@@ -4,8 +4,7 @@ return {
   {
     "saghen/blink.cmp",
     dependencies = {
-      "rafamadriz/friendly-snippets",
-      "markchristianlacap/csharp-namespace.nvim",
+      "rafamadriz/friendly-snippets", "markchristianlacap/csharp-namespace.nvim",
     },
     version = "1.*",
     ---@module "blink.cmp"

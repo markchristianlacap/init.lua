@@ -43,7 +43,7 @@ return {
       },
     },
     lazy = false,
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
     keys = {
       {
         "<leader>e",
@@ -59,16 +59,6 @@ return {
       options = {
         theme = "kanagawa",
       },
-    },
-  },
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
-    dependencies = {
-      "MunifTanjim/nui.nvim",
     },
   },
 }
