@@ -4,7 +4,8 @@ return {
   {
     "saghen/blink.cmp",
     dependencies = {
-      "rafamadriz/friendly-snippets", "markchristianlacap/csharp-namespace.nvim",
+      "rafamadriz/friendly-snippets",
+      "markchristianlacap/csharp-namespace.nvim",
     },
     version = "1.*",
     ---@module "blink.cmp"
@@ -20,7 +21,7 @@ return {
       -- },
       completion = { documentation = { auto_show = false } },
       appearance = {
-        nerd_font_variant = "mono"
+        nerd_font_variant = "mono",
       },
       fuzzy = { implementation = "prefer_rust_with_warning" },
       sources = {
@@ -30,13 +31,13 @@ return {
           "path",
           "snippets",
           "buffer",
-          "csharp_namespace"
+          "csharp_namespace",
         },
         providers = {
           csharp_namespace = {
             module = "blink-csharp-namespace",
             name = "C# Namespace",
-            opts = {}
+            opts = {},
           },
           lazydev = {
             name = "LazyDev",
@@ -47,6 +48,6 @@ return {
         },
       },
     },
-    opts_extend = { "sources.default" }
-  }
+    opts_extend = { "sources.default" },
+  },
 }

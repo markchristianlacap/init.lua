@@ -18,7 +18,7 @@ return {
         "stylua",
         "csharpier",
         "cspell",
-        "roslyn"
+        "roslyn",
       },
     }
     -- enable mason and configure icons
@@ -33,8 +33,8 @@ return {
       automatic_enable = {
         exclude = {
           "vue_ls",
-          "vtsls"
-        }
+          "vtsls",
+        },
       },
       -- list of servers for mason to install and auto setup
       ensure_installed = {

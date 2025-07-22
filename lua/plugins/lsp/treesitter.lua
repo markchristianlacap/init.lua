@@ -1,13 +1,12 @@
 if vim.g.vscode then return {} end
-return
-{
+return {
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = 'master',
+    branch = "master",
     lazy = false,
     build = ":TSUpdate",
     config = function()
-      require "nvim-treesitter.configs".setup {
+      require("nvim-treesitter.configs").setup {
         highlight = {
           enable = true,
           -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
@@ -19,9 +18,7 @@ return
           disable = function(lang, buf)
             local max_filesize = 100 * 1024 -- 100 KB
             local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then
-              return true
-            end
+            if ok and stats and stats.size > max_filesize then return true end
           end,
 
           -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
@@ -49,5 +46,5 @@ return
         },
       }
     end,
-  }
+  },
 }
