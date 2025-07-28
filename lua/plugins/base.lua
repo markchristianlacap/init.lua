@@ -19,10 +19,6 @@ return {
     ---@module "oil"
     ---@type oil.SetupOpts
     opts = {
-      columns = {
-        "icon",
-        "size",
-      },
       skip_confirm_for_simple_edits = true,
       view_options = {
         show_hidden = true,
@@ -45,7 +41,6 @@ return {
         ["g."] = { "actions.toggle_hidden", mode = "n" },
         ["g\\"] = { "actions.toggle_trash", mode = "n" },
       },
-      -- Set to false to disable all of the above keymaps
       use_default_keymaps = false,
     },
     lazy = false,
