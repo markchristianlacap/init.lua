@@ -1,5 +1,4 @@
 local opt = vim.opt
-
 opt.relativenumber = true
 opt.number = true
 
@@ -39,15 +38,15 @@ vim.o.mouse = 'a'
 
 vim.g.have_nerd_font = true
 vim.diagnostic.config {
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = "",
-      [vim.diagnostic.severity.WARN] = "",
-      [vim.diagnostic.severity.INFO] = "",
-      [vim.diagnostic.severity.HINT] = "",
-    },
-  },
-  virtual_text = {
-    current_line = true,
-  },
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "",
+		},
+	},
+	virtual_text = {
+		current_line = true,
+	},
 }
