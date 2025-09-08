@@ -34,6 +34,7 @@ return {
         exclude = {
           "vue_ls",
           "vtsls",
+          "roslyn"
         },
       },
       -- list of servers for mason to install and auto setup
