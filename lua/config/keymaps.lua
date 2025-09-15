@@ -54,6 +54,9 @@ vim.keymap.set("n", "<leader>bC", ":bufdo bd<CR>", opts)
 opts.desc = "Close other buffers except current"
 vim.keymap.set("n", "<leader>bc", ":%bd|e#<CR>", opts)
 
+--clear search
+opts.desc = "Clear search"
+vim.keymap.set("n", "<leader><leader>", ":nohlsearch<CR>", opts)
 -- LSP
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
