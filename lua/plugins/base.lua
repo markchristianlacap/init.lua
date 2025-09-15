@@ -6,12 +6,9 @@ return {
     priority = 1000,
     config = function()
       require("kanagawa").setup {
-        compile = true,        -- enable compiling the colorscheme
-        transparent = true,    -- do not set background color
-        terminalColors = true, -- define vim.g.terminal_color_{0,17}
-        theme = "dragon",      -- Load "wave" theme
+        transparent = true, -- do not set background color
       }
-      vim.cmd.colorscheme "kanagawa-dragon"
+      vim.cmd.colorscheme "kanagawa"
     end,
   },
   {

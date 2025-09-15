@@ -4,6 +4,8 @@ vim.g.maplocalleader = "\\"
 local opts = { noremap = true, silent = true, desc = "" }
 opts.desc = "Better escape"
 vim.keymap.set("i", "jk", "<ESC>", opts)
+opts.desc = "Clear highlight"
+vim.keymap.set("n", "<leader><leader>", ":nohlsearch<CR>", opts)
 
 opts.desc = "Move selection down"
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
