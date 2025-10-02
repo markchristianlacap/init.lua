@@ -46,7 +46,6 @@ return {
         "cssls",
         "html",
         "jsonls",
-        "rust_analyzer",
         "yamlls",
         "dockerls",
         "intelephense",
