@@ -33,8 +33,6 @@ opts.desc = "Copy to clipboard"
 vim.keymap.set("n", "<leader>Y", [["+Y]], opts)
 opts.desc = "Delete without losing original content"
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], opts)
-opts.desc = "LSP Format code"
-vim.keymap.set("n", "<leader>lf", function() require("mark.utils").format() end, opts)
 opts.desc = "Replace word under cursor"
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
