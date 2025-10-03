@@ -1,4 +1,3 @@
-if vim.g.vscode then return {} end
 return {
   {
     "folke/lazydev.nvim",

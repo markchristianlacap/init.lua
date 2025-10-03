@@ -1,4 +1,3 @@
-if vim.g.vscode then return {} end
 return {
   "williamboman/mason.nvim",
   dependencies = {
@@ -15,7 +14,6 @@ return {
     -- import mason-tool-installer
     mason_tool_installer.setup {
       ensure_installed = {
-        "stylua",
         "csharpier",
         "cspell",
         "roslyn",
